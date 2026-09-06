@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Pearl Bipin Papers — Papers, Research, Books & Writings">
 <meta name="twitter:description" content="A canonical index of the papers, books, poetry, research, and writings of Pearl Bipin Pulickal.">
 <meta name="twitter:image" content="https://pearlbipinpapers.vercel.app/images/pearlbipin.jpg">
-<meta name="description" content="Pearl Bipin Papers is the canonical index of the papers, books, poetry, research, and writings of Pearl Bipin Pulickal. Browse 135 works and their full-text PDFs.">
+<meta name="description" content="Pearl Bipin Papers is the canonical index of the papers, books, poetry, research, and writings of Pearl Bipin Pulickal. Browse 136 works and their full-text PDFs.">
 <meta name="author" content="Pearl Bipin Pulickal">
 
 <script type="application/ld+json">
@@ -243,7 +243,7 @@ input,select{
 .input-shell input{padding-left:29px}
 input::placeholder{color:#675f50}
 input:focus,select:focus{border-color:#d4af37;box-shadow:none}
-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#9e916f 50%),linear-gradient(135deg,#9e916f 50%,transparent 50%);background-position:calc(100% - 14px) 17px,calc(100% - 9px) 17px;background-size:5px 5px;background-repeat:no-repeat}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#9e916f 50%),linear-gradient(deg,#9e916f 50%,transparent 50%);background-position:calc(100% - 14px) 17px,calc(100% - 9px) 17px;background-size:5px 5px;background-repeat:no-repeat}
 .clear-btn{white-space:nowrap}
 .controls-status{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
@@ -478,7 +478,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px}
         <button id="clear" class="mini-btn clear-btn" type="button">CLEAR</button>
       </div>
       <div class="controls-status">
-        <span><strong id="count">135</strong> works indexed <span class="topbar-divider">·</span> <span id="result-label">All works</span></span>
+        <span><strong id="count">136</strong> works indexed <span class="topbar-divider">·</span> <span id="result-label">All works</span></span>
         <span class="shortcut">SEARCH / <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd></span>
       </div>
     </div>
@@ -487,7 +487,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px}
   <section id="catalogue" class="catalogue" aria-labelledby="catalogue-title">
     <div class="catalogue-head">
       <h2 id="catalogue-title" class="catalogue-title">Catalogue</h2>
-      <div class="catalogue-note">135 unique works · catalogue version 2</div>
+      <div class="catalogue-note">136 unique works · catalogue version 2</div>
     </div>
     <div id="works" class="works"></div>
   </section>
@@ -496,7 +496,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px}
 <footer>
   <div class="wrap">
     <span class="footer-mark">PEARL BIPIN PAPERS</span>
-    <span>135 unique works · catalogue version 2</span>
+    <span>136 unique works · catalogue version 2</span>
   </div>
 </footer>
 
@@ -2155,7 +2155,19 @@ const WORKS = [
       "independent scholars",
       "academic publishing"
     ]
-  }
+  },
+  {
+  "legacy_number": 136,
+  "id": "PBP-0136",
+  "title": "The Pulickal Conjecture: Finite-Range Extremal Complexity of Signed Pure Prime-Power Representations",
+  "date": "September 2026",
+  "summary": "Formulates a finite-height extremal problem for representing primes as signed sums of pure powers from a fixed set of prime bases, proves a counting lower bound of order log B / log log B, and conjectures that this scale is asymptotically sharp.",
+  "link_type": "PDF",
+  "link": "papers/PBP-136.pdf",
+  "category": "Mathematics / Number Theory",
+  "type": "Work",
+  "tags": []
+}
 ];
 
 const worksEl=document.getElementById("works");
