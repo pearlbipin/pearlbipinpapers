@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Pearl Bipin Papers — Papers, Research, Books & Writings">
 <meta name="twitter:description" content="A canonical index of the papers, books, poetry, research, and writings of Pearl Bipin Pulickal.">
 <meta name="twitter:image" content="https://pearlbipinpapers.vercel.app/images/pearlbipin.jpg">
-<meta name="description" content="Pearl Bipin Papers is the canonical index of the papers, books, poetry, research, and writings of Pearl Bipin Pulickal. Browse 137 works and their full-text PDFs.">
+<meta name="description" content="Pearl Bipin Papers is the canonical index of the papers, books, poetry, research, and writings of Pearl Bipin Pulickal. Browse the works and their full-text PDFs.">
 <meta name="author" content="Pearl Bipin Pulickal">
 
 <script type="application/ld+json">
@@ -478,7 +478,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px}
         <button id="clear" class="mini-btn clear-btn" type="button">CLEAR</button>
       </div>
       <div class="controls-status">
-        <span><strong id="count">137</strong> works indexed <span class="topbar-divider">·</span> <span id="result-label">All works</span></span>
+        <span><strong id="count"></strong> works indexed <span class="topbar-divider">·</span> <span id="result-label">All works</span></span>
         <span class="shortcut">SEARCH / <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd></span>
       </div>
     </div>
@@ -487,7 +487,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px}
   <section id="catalogue" class="catalogue" aria-labelledby="catalogue-title">
     <div class="catalogue-head">
       <h2 id="catalogue-title" class="catalogue-title">Catalogue</h2>
-      <div class="catalogue-note">137 unique works · catalogue version 2</div>
+      <div class="catalogue-note"><span id="totalWorks">0</span> unique works · catalogue version 2</div>
     </div>
     <div id="works" class="works"></div>
   </section>
@@ -496,7 +496,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px}
 <footer>
   <div class="wrap">
     <span class="footer-mark">PEARL BIPIN PAPERS</span>
-    <span>137 unique works · catalogue version 2</span>
+    <span><span id="footerTotal">0</span> unique works · catalogue version 2</span>
   </div>
 </footer>
 
@@ -2188,6 +2188,9 @@ const categoryEl=document.getElementById("category");
 const yearEl=document.getElementById("year");
 const sortEl=document.getElementById("sort");
 const countEl=document.getElementById("count");
+const totalWorksEl=document.getElementById("totalWorks");
+const footerTotalEl=document.getElementById("footerTotal");
+const metaDescriptionEl=document.querySelector('meta[name="description"]');
 const resultLabelEl=document.getElementById("result-label");
 const clearEl=document.getElementById("clear");
 
@@ -2241,6 +2244,9 @@ function closePdfViewer(){
 }
 
 function render(){
+  totalWorksEl.textContent=WORKS.length;
+  footerTotalEl.textContent=WORKS.length;
+  metaDescriptionEl.setAttribute("content",`Pearl Bipin Papers is the canonical index of the papers, books, poetry, research, and writings of Pearl Bipin Pulickal. Browse ${WORKS.length} works and their full-text PDFs.`);
  const q=searchEl.value.trim().toLowerCase(),cat=categoryEl.value,year=yearEl.value;
  let list=WORKS.filter(w=>{
   const hay=`${w.title} ${w.summary} ${w.category} ${w.date} ${(w.tags||[]).join(" ")}`.toLowerCase();
